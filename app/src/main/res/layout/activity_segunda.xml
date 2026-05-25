@@ -13,11 +13,11 @@
         android:layout_width="269dp"
         android:layout_height="266dp"
         android:layout_marginStart="130dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="232dp"
         android:layout_marginEnd="131dp"
         android:src="@drawable/logo_coffe"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.319"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
