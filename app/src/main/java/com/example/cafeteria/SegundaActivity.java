@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,9 +15,8 @@ public class SegundaActivity extends AppCompatActivity {
     Button iniciarsesion;
     TextView sincuenta;
 
+    EditText ingreemail;
     TextInputEditText ingrecontraseña;
-
-    android.widget.EditText ingreemail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,60 +24,49 @@ public class SegundaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_segunda);
 
         iniciarsesion = findViewById(R.id.iniciarsesion);
-
         sincuenta = findViewById(R.id.sincuenta);
 
         ingreemail = findViewById(R.id.ingreemail);
-
         ingrecontraseña = findViewById(R.id.ingrecontraseña);
 
-        // BOTON INICIAR SESION
         iniciarsesion.setOnClickListener(v -> {
 
             String email = ingreemail.getText().toString().trim();
-
             String contraseña = ingrecontraseña.getText().toString().trim();
 
-            // VALIDAR EMAIL
-            if(email.isEmpty()){
-
+            // ✅ VALIDACIÓN EMAIL OBLIGATORIO
+            if (email.isEmpty()) {
                 ingreemail.setError("Ingrese su email");
-
                 ingreemail.requestFocus();
-
                 return;
             }
 
-            // VALIDAR CONTRASEÑA
-            if(contraseña.isEmpty()){
+            // (opcional pero recomendable)
+            if (!email.contains("@")) {
+                ingreemail.setError("Email inválido");
+                ingreemail.requestFocus();
+                return;
+            }
 
+            // ✅ VALIDACIÓN CONTRASEÑA OBLIGATORIA
+            if (contraseña.isEmpty()) {
                 ingrecontraseña.setError("Ingrese su contraseña");
-
                 ingrecontraseña.requestFocus();
-
                 return;
             }
 
-            // ABRIR ACTIVITY
-            Intent intent = new Intent(
-                    SegundaActivity.this,
-                    cuartoActivity.class
-            );
+            // 🔥 EXTRAER NOMBRE DEL EMAIL
+            String usuario = email.substring(0, email.indexOf("@"));
+
+            Intent intent = new Intent(SegundaActivity.this, cuartoActivity.class);
+            intent.putExtra("usuario", usuario);
 
             startActivity(intent);
-
         });
 
-        // CREAR CUENTA
         sincuenta.setOnClickListener(v -> {
-
-            Intent intent = new Intent(
-                    SegundaActivity.this,
-                    TerceraActivity.class
-            );
-
+            Intent intent = new Intent(SegundaActivity.this, TerceraActivity.class);
             startActivity(intent);
-
         });
     }
 }
