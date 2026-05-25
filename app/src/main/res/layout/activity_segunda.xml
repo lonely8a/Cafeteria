@@ -79,17 +79,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.403" />
 
+
     <EditText
         android:id="@+id/ingreemail"
         android:layout_width="319dp"
         android:layout_height="38dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="45dp"
         android:hint="name@example.com"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.551" />
@@ -99,17 +97,13 @@
         android:id="@+id/ingrecontraseña"
         android:layout_width="319dp"
         android:layout_height="38dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="45dp"
         android:hint="••••••••"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.639" />
-
 
     <Button
         android:id="@+id/iniciarsesion"
@@ -158,10 +152,31 @@
         app:layout_constraintVertical_bias="0.592" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/sincuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="72dp"
-        tools:layout_editor_absoluteY="579dp" />
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="214dp"
+        android:text="¿No tienes una cuenta?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.801" />
+
+    <TextView
+        android:id="@+id/Experienciaium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="174dp"
+        android:layout_marginTop="83dp"
+        android:layout_marginEnd="179dp"
+        android:text="Experiencia prémium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.936" />
 </androidx.constraintlayout.widget.ConstraintLayout>
