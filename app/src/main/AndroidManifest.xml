@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cafeteria">
         <activity
+            android:name=".cuartoActivity"
+            android:exported="false" />
+        <activity
             android:name=".TerceraActivity"
             android:exported="false" />
         <activity
