@@ -1,6 +1,8 @@
 package com.example.cafeteria;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,15 +12,32 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class TerceraActivity extends AppCompatActivity {
 
+    Button button3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_tercera);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        button3 = findViewById(R.id.button3);
+
+        // BOTON LOG IN
+        button3.setOnClickListener(v -> {
+
+            Intent intent = new Intent(
+                    TerceraActivity.this,
+                    SegundaActivity.class
+            );
+
+            startActivity(intent);
+
         });
     }
 }
